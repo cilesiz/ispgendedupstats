@@ -41,6 +41,9 @@ done
 
 echo "The generate_dedupstats.sh script is ready, please audit the script before running!!!!"
 
+# Remove remark to run generate_dedupstats.sh without audit
+# ./generate_dedupstats.sh
+
 rm /tmp/stgpools.list.$$
 rm /tmp/stgpool_node.list.$$
 rm /tmp/stgpool_node.sorted.$$
