@@ -31,18 +31,19 @@ done
 
 cat /tmp/stgpool_node.list.$$ | sort -u > /tmp/stgpool_node.sorted.$$
 
-echo > generate_dedupstats.sh
-chmod 750 generate_dedupstats.sh
+echo > /tmp/generate_dedupstats.sh
+chmod 700 /tmp/generate_dedupstats.sh
 
 for i in `cat /tmp/stgpool_node.sorted.$$`; do
-echo $i ,$userid,$password | awk -F"," '{print "dsmadmc -id=" $3 " -pass=" $4 "  \"generate dedupstats " $1 " " $2 "\""}'  >> generate_dedupstats.sh
-echo sleep $sleep >> generate_dedupstats.sh
+echo $i ,$userid,$password | awk -F"," '{print "dsmadmc -id=" $3 " -pass=" $4 "  \"generate dedupstats " $1 " " $2 "\""}'  >> /mtp/generate_dedupstats.sh
+echo sleep $sleep >> /tmp/generate_dedupstats.sh
 done
 
 echo "The generate_dedupstats.sh script is ready, please audit the script before running!!!!"
 
-# Remove remark to run generate_dedupstats.sh without audit
-# ./generate_dedupstats.sh
+# Remove remark on next two lines to run generate_dedupstats.sh without audit
+# /tmp/generate_dedupstats.sh
+# rm /tmp/generate_dedupstats.sh
 
 rm /tmp/stgpools.list.$$
 rm /tmp/stgpool_node.list.$$
