@@ -39,7 +39,7 @@ echo $i ,$userid,$password | awk -F"," '{print "dsmadmc -id=" $3 " -pass=" $4 " 
 echo sleep $sleep >> generate_dedupstats.sh
 done
 
-echo "The generate_dedupstats.sh script is ready, please audit that before running!!!!"
+echo "The generate_dedupstats.sh script is ready, please audit the script before running!!!!"
 
 rm /tmp/stgpools.list.$$
 rm /tmp/stgpool_node.list.$$
