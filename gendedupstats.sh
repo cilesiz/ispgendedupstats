@@ -8,8 +8,8 @@
 # You need to fill in ISP system administrator info below.
 # The sleep variable causes n seconds delay between every generate dedupstats run.
 #
-userid=<isp admin>
-password=<isp admin password>
+userid=
+password=
 sleep=15
 
 if [ "$userid" = "" ] || [ "$password" = "" ]; then
