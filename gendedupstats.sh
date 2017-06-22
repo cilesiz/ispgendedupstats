@@ -17,7 +17,7 @@ if [ "$userid" = "" ] || [ "$password" = "" ]; then
      exit
 fi
 
-/usr/bin/dsmadmc -id=$userid -pass=$password  -dataonly=yes "q status" > /dev/null
+/usr/bin/dsmadmc -id=$userid -pass=$password  -dataonly=yes "q db" > /dev/null
 retval=$?
 if [ $retval -ne 0 ]; then
      echo "Could not connect to IPS(TSM) server with supplied username/password!"
